@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-log4j12:+'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:+'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:+'
+
+    compileOnly 'org.projectlombok:lombok:+'
+    annotationProcessor 'org.projectlombok:lombok:+'
+    testCompileOnly 'org.projectlombok:lombok:+'
+    testAnnotationProcessor 'org.projectlombok:lombok:+'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
